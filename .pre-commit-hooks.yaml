@@ -1,0 +1,6 @@
+- id: flake8-staged-diff
+  name: flake8-staged-diff
+  description: Run flake8 only on the diff of staged files
+  entry: flake8-staged-diff
+  language: python
+  pass_filenames: true
