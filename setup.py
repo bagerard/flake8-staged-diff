@@ -24,7 +24,7 @@ setup(
     install_requires=INSTALL_REQUIRES,
     entry_points={
         "console_scripts": [
-            # "gitlabci-jsonschema-linter = gitlabci_lint.linter:main",
+            "flake8-staged-diff = flake8_staged_diff.main:main",
         ]
     },
     classifiers=[

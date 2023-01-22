@@ -1,7 +1,7 @@
 # Disable printing of all the makefile commands
 MAKEFLAGS += --silent
 
-.PHONY: setup-venv test
+.PHONY: setup-venv
 
 PYTHON_VERSION = "3.10.9"
 VENV_NAME := $(shell cat .python-version)
