@@ -45,7 +45,8 @@ def run_flake8(args: List[str]) -> str:
     ).stdout.decode()
 
 
-def main(files_and_args: List[str]) -> int:
+def main() -> int:
+    files_and_args: List[str] = sys.argv[1:]
     git_diff = get_diff_staged()
     diff_upsert_lines = git_diff_upsert_lines(git_diff)
 
@@ -67,4 +68,4 @@ def main(files_and_args: List[str]) -> int:
 
 
 if __name__ == "__main__":
-    exit(main(sys.argv[1:]))
+    exit(main())

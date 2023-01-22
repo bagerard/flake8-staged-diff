@@ -77,7 +77,7 @@ def test_main__findings__return_1(capsys):
             m_get_diff_staged.return_value = git_diff_staged_sample
             m_run_flake8.return_value = flake8_sample_output
 
-            assert main([]) == 1
+            assert main() == 1
 
             captured = capsys.readouterr()
             assert captured.out == (
@@ -94,7 +94,7 @@ def test_main__no_flake8_findings__return_0(capsys):
             m_get_diff_staged.return_value = git_diff_staged_sample
             m_run_flake8.return_value = ""
 
-            assert main([]) == 0
+            assert main() == 0
             captured = capsys.readouterr()
             assert captured.out == ""
 
@@ -104,7 +104,7 @@ def test_main__no_staged_files__skip_call_flake8(capsys):
         with patch("flake8_staged_diff.main.run_flake8") as m_run_flake8:
             m_get_diff_staged.return_value = ""
 
-            assert main([]) == 0
+            assert main() == 0
             m_run_flake8.assert_not_called()
             captured = capsys.readouterr()
             assert captured.out == "No diff - Skip flake8 call\n"
