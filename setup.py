@@ -17,7 +17,7 @@ setup(
     url="https://github.com/bagerard/flake8-staged-diff",
     keywords="flake8 diff linter pre-commit",
     license="MIT License",
-    description="Python library to run flake8 only on modified/staged code",
+    description="flake8 wrapper to run only on modified/staged code",
     long_description=long_description,
     long_description_content_type="text/markdown",
     packages=["flake8_staged_diff"],
