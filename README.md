@@ -49,3 +49,7 @@ We use this at work for enforcing type annotations on modified code using the fo
         additional_dependencies:
           - flake8-annotations
 ```
+
+## Consideration
+
+Make sure to review pre-commit / Flake8's maintainer comment made [here](https://github.com/pre-commit/pre-commit/issues/1279#issuecomment-573444321).
