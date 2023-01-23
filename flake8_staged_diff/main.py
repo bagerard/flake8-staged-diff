@@ -32,17 +32,25 @@ def git_diff_upsert_lines(git_diff_output: str) -> Set[str]:
 
 
 def get_diff_staged():
-    return subprocess.run(
+    cmd_out = subprocess.run(
         ("git", "diff", "-U0", "--staged", "--"),
         stdout=subprocess.PIPE,
-    ).stdout.decode()
+    )
+    if cmd_out.returncode != 0:
+        raise Exception(
+            f"git diff failed: {cmd_out.stderr.decode() if cmd_out.stderr else cmd_out.stdout.decode()}"
+        )
+    return cmd_out.stdout.decode()
 
 
 def run_flake8(args: List[str]) -> str:
-    return subprocess.run(
+    cmd_out = subprocess.run(
         ("flake8", *args),
         stdout=subprocess.PIPE,
-    ).stdout.decode()
+    )
+    if cmd_out.stderr:
+        raise Exception(f"Flake8 run failed: {cmd_out.stderr}")
+    return cmd_out.stdout.decode()
 
 
 def main() -> int:
@@ -55,7 +63,6 @@ def main() -> int:
         return 0
 
     flake8_output = run_flake8(files_and_args)
-
     flake8_upsert_matches = []
     for flake8_finding in flake8_output.split("\n"):
         if any(l in flake8_finding for l in diff_upsert_lines):
