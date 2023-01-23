@@ -32,7 +32,6 @@ repos:
   hooks:
     - id: flake8-staged-diff
       name: flake8-staged-diff
-      verbose: true
       language: python
       entry: flake8-staged-diff
       args: [ '--isolated', '--select=P,F401,F821,F901', '--ignore=P101,P102' ]
