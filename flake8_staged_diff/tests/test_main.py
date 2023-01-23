@@ -54,20 +54,20 @@ def test_find_between():
 
 def test_git_diff_upsert_lines():
     assert git_diff_upsert_lines(git_diff_staged_sample) == {
-        ".pre-commit-config.yaml:289",
-        ".pre-commit-config.yaml:290",
-        ".pre-commit-config.yaml:291",
-        ".pre-commit-config.yaml:292",
-        ".pre-commit-config.yaml:293",
-        ".pre-commit-config.yaml:294",
-        ".pre-commit-config.yaml:295",
-        ".pre-commit-config.yaml:296",
-        ".pre-commit-config.yaml:297",
-        ".pre-commit-config.yaml:298",
-        ".pre-commit-config.yaml:299",
-        ".pre-commit-config.yaml:300",
-        "src/databasemanager/database_manager.py:26",
-        "src/databasemanager/database_manager.py:27",
+        ".pre-commit-config.yaml:289:",
+        ".pre-commit-config.yaml:290:",
+        ".pre-commit-config.yaml:291:",
+        ".pre-commit-config.yaml:292:",
+        ".pre-commit-config.yaml:293:",
+        ".pre-commit-config.yaml:294:",
+        ".pre-commit-config.yaml:295:",
+        ".pre-commit-config.yaml:296:",
+        ".pre-commit-config.yaml:297:",
+        ".pre-commit-config.yaml:298:",
+        ".pre-commit-config.yaml:299:",
+        ".pre-commit-config.yaml:300:",
+        "src/databasemanager/database_manager.py:26:",
+        "src/databasemanager/database_manager.py:27:",
     }
 
 

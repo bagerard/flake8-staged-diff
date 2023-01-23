@@ -10,6 +10,10 @@ def find_between(text, left, right):
 
 def git_diff_upsert_lines(git_diff_output: str) -> Set[str]:
     """Extract the modified file and lines from the output of `git diff --staged`
+    And return them in a format that is easily comparable with flake8's output
+
+    Typically "/file/path:line:" as flake8's finding are reported as e.g
+    src/module.py:281:70: ANN205 Missing return type annotation for staticmethod
 
     Inspired by https://stackoverflow.com/questions/8259851/using-git-diff-how-can-i-get-added-and-modified-lines-numbers
     """
@@ -26,7 +30,7 @@ def git_diff_upsert_lines(git_diff_output: str) -> Set[str]:
             n_line_str = find_between(line, "+", "@@")
             n_line = int(float(n_line_str.replace(",", ".")))
         elif line.startswith("+"):
-            upserted_lines.add(f"{path}:{n_line}")
+            upserted_lines.add(f"{path}:{n_line}:")
             n_line += 1
     return upserted_lines
 
