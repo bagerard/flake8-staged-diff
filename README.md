@@ -52,4 +52,4 @@ We use this at work for enforcing type annotations on modified code using the fo
 
 ## Consideration
 
-Make sure to review pre-commit / Flake8's maintainer comment made [here](https://github.com/pre-commit/pre-commit/issues/1279#issuecomment-573444321).
+Use this consciously, not every flake8's rule is a good candidate for this tool, in fact sometimes a modified line can introduce errors in other part of the file but since those part of the file aren't in the diff, they wouldn't appear through this tool. Make sure to review pre-commit / Flake8's maintainer comment made [here](https://github.com/pre-commit/pre-commit/issues/1279#issuecomment-573444321).
