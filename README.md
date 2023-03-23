@@ -23,7 +23,7 @@ repos:
       - id: flake8-staged-diff
 ```
 
-> **_NOTE:_**  This will only affect local usage of pre-commit, typically through `git commit`
+> **_NOTE:_**  This will only affect local usage of pre-commit, typically through `git commit`.
 > When it runs for instance in a Github pipeline through `pre-commit run -a`, there will be **no staged files**
 > and the tool will simply pass.
 
