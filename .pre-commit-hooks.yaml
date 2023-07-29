@@ -3,4 +3,5 @@
   description: Run flake8 only on the diff of staged files
   entry: flake8-staged-diff
   language: python
+  types: [python]
   pass_filenames: true
