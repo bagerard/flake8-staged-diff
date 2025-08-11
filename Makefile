@@ -3,7 +3,7 @@ MAKEFLAGS += --silent
 
 .PHONY: setup-venv
 
-PYTHON_VERSION = "3.10.9"
+PYTHON_VERSION = "3.12"
 VENV_NAME := $(shell cat .python-version)
 
 
